@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class InsultGenerator {
+    //initialize connexion
 	Connection conn = null;
 
 	public String generateInsult() {

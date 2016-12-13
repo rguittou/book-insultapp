@@ -11,7 +11,7 @@ public class InsultGenerator {
 			String vowels = "AEIOU";
 			String article = "an";
 			String theInsult = "";
-
+			//
 			try {
 				Class.forName("org.postgresql.Driver");
 				String databaseURL = "jdbc:postgresql://";

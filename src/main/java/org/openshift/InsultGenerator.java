@@ -35,7 +35,7 @@ public class InsultGenerator {
 				connection.close();
 			}
 		}
-		catch (Exception e) {return "Database connection problem!";}
+		catch (Exception e) {System.out.println("Exception msg:"+e.getMessage());}
 
 		return insults;
 	}

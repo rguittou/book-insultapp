@@ -16,9 +16,7 @@ public class InsultGenerator {
 		String insults = "";
 		try
 		{
-			String databaseURL = "jdbc:postgresql://";
-			databaseURL += System.getenv("172.17.0.9");
-			databaseURL += "/" + System.getenv("app2");
+			String databaseURL = "jdbc:postgresql://172.17.0.9/app2";
 			String username = System.getenv("admin");
 			String password = System.getenv("admin");
 			Connection connection = DriverManager.getConnection(databaseURL, username, password);

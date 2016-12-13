@@ -7,10 +7,11 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class InsultGenerator {
-    //initialize connexion
+
 
 
 	public String generateInsult() {
+		//initialize connexion
         Connection connection = null;
 		String vowels = "AEIOU";
 		String article = "an";

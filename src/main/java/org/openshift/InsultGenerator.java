@@ -19,12 +19,14 @@ public class InsultGenerator {
 		try
 		{
             System.out.println("Flag 1");
-			//String databaseURL = "jdbc:postgresql://172.17.0.9/app2";
-			//String username = System.getenv("admin");
-			//String password = System.getenv("admin");
-            System.out.println("Flag 2 set connection:");
-			//Connection connection = DriverManager.getConnection(databaseURL, username, password);
-			connection=DriverManager.getConnection("jdbc:postgresql://172.17.0.9:5432/app2?currentSchema=app2&user=admin&password=admin");
+			Class.forName("org.postgresql.Driver");
+			String databaseURL = "jdbc:postgresql://";
+			databaseURL += System.getenv("POSTGRESQL_SERVICE_HOST");
+			databaseURL += "/" + System.getenv("POSTGRESQL_DATABASE");
+			String username = System.getenv("POSTGRESQL_USER");
+			String password = System.getenv("POSTGRESQL_PASSWORD");
+			System.out.println("Flag 2 set connection:");
+			connection = DriverManager.getConnection(databaseURL, username, password);
             System.out.println("Flag 3 connection setting:"+connection.getClientInfo());
 			if (connection !=null) {
 				String SQL = "select a.string AS first, b.string AS second, c.string AS noun from short_adjective a , long_adjective b, noun c ORDER BY random() limit 1";
